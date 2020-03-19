@@ -22,9 +22,10 @@ class CreateCasos extends Migration
             $table->integer('sospechosos');
             $table->integer('recuperados');
             $table->integer('negativos');
+            $table->integer('muertos');
            
             //$table->timestamps();
-            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            //$table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

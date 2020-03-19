@@ -13,5 +13,5 @@ class casos extends Model
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['id','region','lat','long', 'confirmados','sospechosos','recuperados','negativos'];
+	protected $fillable = ['id','region','lat','long', 'confirmados','sospechosos','recuperados','negativos','muertos'];
 }

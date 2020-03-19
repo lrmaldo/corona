@@ -39,8 +39,8 @@ document.getElementById("fecha2").innerHTML =d;
                         <!-- tabla y botones para generr pdf y excel-->
                       <div class="card mb-4">
                             <div class="card-header"><i class="fas fa-table mr-1"></i>Casos  
-                             <a href="{{ url('dashboard/store/xlsx') }}"><button class="btn btn-success">Descargar en Excel xlsx</button></a>
-                            <a href="{{ url('dashboard/store/pdf') }}"><button class="btn btn-success">Descargar en pdf</button></a>
+                             <a href="{{ url('dashboard/create') }}"><button class="btn btn-success">Agregar Caso</button></a>
+                            <!--a href="{{ url('dashboard/store/pdf') }}"><button class="btn btn-success">Descargar en pdf</button></a-->
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -66,7 +66,7 @@ document.getElementById("fecha2").innerHTML =d;
                                             <tr>
                                                 <td>{{$registro->id}}</td>
                                                 <td>{{$registro->region}}</td>
-                                                <td>{{$registro->confirmado}}</td>
+                                                <td>{{$registro->confirmados}}</td>
                                                 <td>{{$registro->sospechosos}}</td>
                                                 <td>{{$registro->recuperados}}</td>
                                                 <td>{{$registro->negativos}}</td>
