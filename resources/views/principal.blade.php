@@ -72,22 +72,30 @@
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat:0, lng: 0},
-          zoom: 2
+          center: {lat:17.0829383, lng: -96.7884567},
+          zoom: 7
         });
         renderData()
+
+      
         async function getData() {
-      const response = await fetch('https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu/latest')
+          const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const url ="http://mapa.sattlink.com/api";
+      const response = await fetch(proxyurl+url)
       const data = await response.json()
+      console.log(data);
       return data
     }
-    function renderExtraData({ confirmed, deaths, recovered, provincestate, countryregion }) {
+    function renderExtraData({ confirmados, sospechosos, recuperados, negativos,muertos, region }) {
       return (`
         <div>
-          <p> <strong>${provincestate} - ${countryregion}</strong> </p>
-          <p> confirmados: ${confirmed} </p>
-          <p> muertes: ${deaths} </p>
-          <p> recuperados: ${recovered} </p>
+          <p> <strong> ${region}</strong> </p>
+          
+          <p> confirmados: ${confirmados} </p>
+          <p> negativos: ${negativos} </p>
+          <p> recuperados: ${recuperados} </p>
+          <p> sospechosos: ${sospechosos} </p>
+          <p> muertos: ${muertos} </p>
         </div>
       `)
     }
@@ -97,11 +105,11 @@
       const data = await getData()
 
       data.forEach(item => {
-        if(item.confirmed>0){
+        
         const marker = new window.google.maps.Marker({
           position: {
-            lat: item.location.lat,
-            lng: item.location.lng,
+            lat: item.lat,
+            lng: item.long,
           },
           map,
           //icon,
@@ -111,7 +119,7 @@
           popup.setContent(renderExtraData(item))
           popup.open(map, marker)
         })
-        }
+        
       })
     }
 
