@@ -90,7 +90,7 @@
     function renderExtraData({ confirmados, sospechosos, recuperados, negativos,muertos, region }) {
       return (`
         <div>
-          <p> <strong> ${region}</strong> </p>
+          <p  class="text-white bg-dark" > ${region} </p>
           
           <p class="text-danger">Confirmados: ${confirmados} </p>
           <p class="text-info" >Negativos: ${negativos} </p>
@@ -114,7 +114,7 @@
           },
           map,
           //icon,
-          title: String(item.confirmed),
+          title: String(item.region),
         })
         marker.addListener('click', () => {
           popup.setContent(renderExtraData(item))
