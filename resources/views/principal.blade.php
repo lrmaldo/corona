@@ -51,9 +51,9 @@
     <div class="alert alert-primary" role="alert">
       Selecciona  en el mapa las ubicaciones para ver más información
     </div>
-
+    <div id="map"></div>
    
-    <!-- Footer  <div id="map"></div> -->
+    <!-- Footer   -->
 <footer class="page-footer font-small blue bg-primary">
  
   <!-- Copyright -->
