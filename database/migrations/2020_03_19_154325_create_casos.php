@@ -16,8 +16,9 @@ class CreateCasos extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('region');
-            $table->string('lat');
-            $table->string('long');
+            
+            $table->double('lat', 25, 16);
+            $table->double('long', 25, 16);
             $table->integer('confirmados');
             $table->integer('sospechosos');
             $table->integer('recuperados');

@@ -39,7 +39,8 @@ class DashboardController extends Controller
 			'lat' => $request->input('lat'),
 			'long' =>$request->input('long'),
 			'confirmados' =>$request->input('confirmados'),
-			'sospechosos'=> $request->input('sospechosos'),
+      'sospechosos'=> $request->input('sospechosos'),
+      'negativos'=> $request->input('negativos'),
 			'recuperados'=> $request->input('recuperados'),
 			'muertos' =>$request->input('muertos'),
 		
@@ -65,7 +66,8 @@ class DashboardController extends Controller
 		$registro->long =$request->long;
 		$registro->confirmados =$request->confirmados;
 		$registro->sospechosos =$request->sospechosos;
-		$registro->recuperados =$request->recuperados;
+    $registro->recuperados =$request->recuperados;
+    $registro->negativos =$request->negativos;
 		$registro->muertos =$request->muertos;
 
 
