@@ -91,11 +91,11 @@
         <div>
           <p> <strong> ${region}</strong> </p>
           
-          <p> confirmados: ${confirmados} </p>
-          <p> negativos: ${negativos} </p>
-          <p> recuperados: ${recuperados} </p>
-          <p> sospechosos: ${sospechosos} </p>
-          <p> muertos: ${muertos} </p>
+          <p class="text-danger">Confirmados: ${confirmados} </p>
+          <p class="text-info" >Negativos: ${negativos} </p>
+          <p class="text-success">Recuperados: ${recuperados} </p>
+          <p  class="text-warning">Sospechosos: ${sospechosos} </p>
+          <p class="text-white bg-dark">Muertos: ${muertos} </p>
         </div>
       `)
     }
