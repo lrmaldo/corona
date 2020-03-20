@@ -81,6 +81,7 @@
         async function getData() {
           const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const url ="http://mapa.sattlink.com/api";
+       //const response = await fetch(proxyurl+url)
       const response = await fetch(url)
       const data = await response.json()
       console.log(data);
@@ -95,7 +96,7 @@
           <p class="text-info" >Negativos: ${negativos} </p>
           <p class="text-success">Recuperados: ${recuperados} </p>
           <p  class="text-warning">Sospechosos: ${sospechosos} </p>
-          <p class="text-white bg-dark">Muertos: ${muertos} </p>
+          <p ><strong>Muertos: ${muertos}</strong> </p>
         </div>
       `)
     }
