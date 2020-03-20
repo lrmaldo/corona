@@ -81,7 +81,7 @@
         async function getData() {
           const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const url ="http://mapa.sattlink.com/api";
-      const response = await fetch(proxyurl+url)
+      const response = await fetch(url)
       const data = await response.json()
       console.log(data);
       return data
