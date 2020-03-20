@@ -79,15 +79,15 @@
                   </div>
                 </div>
 
-                
                 <div class="form-group">
                 <div class="input-group-prepend">
                   <label class="col-md-4 control-label">Negativos:*</label>
                   </div>
                   <div class="col-md-8">
-                  <input type="number" min="0" max="999"  class="form-control" name="negativos"   >
+                  <input type="number" min="0" max="999"  class="form-control" name="negativos"  value="{{ $registro->negativos }}" required >
                   </div>
                 </div>
+
 
 
 
