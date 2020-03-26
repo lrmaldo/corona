@@ -21,9 +21,15 @@ Route::get('/recomendacion', function () {
     return view('recomendacion');
 });
 
-Route::resource('api','apiController');
+//rutas de apis
+Route::get('api','apiController@index');
+Route::get('api/noticias','apiController@apinoticias');
 
 
+///rutas de noticias
+Route::resource('noticias','NoticiasController');
+Route::post('noticias/store','NoticiasController@store');
+Route::delete('/noticias/destroy/{id}','NoticiasController@destroy');
 
 
 Route::resource('dashboard','DashboardController');

@@ -40,9 +40,9 @@
                             <a class="nav-link" href="{{ url('/dashboard') }}"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard</a >
-                                <a class="nav-link" href="{{url('/grafica')}}"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Estadisticas</a>
+                                <a class="nav-link" href="{{url('/noticias')}}"
+                                ><div class="sb-nav-link-icon"><i class="fas cloud_upload"></i></div>
+                                Noticias</a>
                            
                             <!--a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-user fa-fw"></i></div>

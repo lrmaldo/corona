@@ -37,6 +37,6 @@ class CreateCasos extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('casos');
     }
 }
