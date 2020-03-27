@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CasosCreateRequest;
 use App\Http\Requests;
 use Redirect; 
-
+use DB;
 class DashboardController extends Controller
 {
     //
@@ -18,7 +18,12 @@ class DashboardController extends Controller
     public function index()
     {
     
-      $casos = \App\casos::All();
+	  $casos = \App\casos::All();
+	  
+	
+	
+
+
     return view('dashboard.index',compact('casos'));
     }
 
@@ -69,11 +74,13 @@ class DashboardController extends Controller
     $registro->recuperados =$request->recuperados;
     $registro->negativos =$request->negativos;
 		$registro->muertos =$request->muertos;
-
-
-
-
 		$registro->save();
+
+
+
+		
+	 
+	 
 		return  Redirect::to('/dashboard');
 
 	}

@@ -28,7 +28,9 @@ class CreateCasos extends Migration
             //$table->timestamps();
             //$table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
         });
+        
     }
+
 
     /**
      * Reverse the migrations.

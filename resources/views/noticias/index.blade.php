@@ -49,7 +49,7 @@ document.getElementById("fecha2").innerHTML =d;
                                             <tr>
                                                 <th>Id</th>
                                                 <th>Titulo</th>
-                                                <th>Resumen</th>
+                                               
                                                 <th>Url_noticias</th>
                                                 <th>Url Imagen</th>
                                                 <th>time</th>
@@ -65,7 +65,7 @@ document.getElementById("fecha2").innerHTML =d;
                                             <tr>
                                                 <td>{{$registro->id}}</td>
                                                 <td>{{$registro->titulo}}</td>
-                                                <td>{{$registro->resumen}}</td>
+                                               
                                                 <td>{{$registro->url_noticia}}</td>
                                                 <td>{{$registro->url_imagen}}</td>
                                                 <td>{{$registro->created_at}}</td>
