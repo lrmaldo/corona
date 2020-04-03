@@ -34,6 +34,6 @@ class NoticiasCreate extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('noticias');
     }
 }
