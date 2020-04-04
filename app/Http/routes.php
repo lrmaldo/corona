@@ -42,6 +42,9 @@ Route::delete('/dashboard/destroy/{id}','DashboardController@destroy');
 
 Route::resource('notificaciones', 'NotificacionesController');
 Route::post('notificaciones/store','NotificacionesController@store');
+Route::post('notificaciones/store1','NotificacionesController@store1');
+Route::delete('/notificaciones/destroy/{id}','NotificacionesController@destroy');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

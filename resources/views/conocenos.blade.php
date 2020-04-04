@@ -12,6 +12,14 @@
 
 </head>
 <body>
+<style>
+  .map-responsive{
+      overflow:hidden;
+      padding-bottom:56.25%;
+      position:relative;
+      height:0;
+  }
+  </style>
     <nav class=" navbar-expand-lg navbar navbar-dark bg-primary">
         <a class="navbar-brand" href="/">MiAppshop by Sattlink©</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +33,9 @@
             <li class="nav-item">
               <a class="nav-link active" href="/conocenos">Quienes somos</a>
             </li>
-           
+            <li class="nav-item">
+            <a class="nav-link" href="http://www.tvbus.tv/web/">Noticias</a>
+          </li>
             <li class="nav-item">
               <a class="nav-link  " href="/recomendacion">Recomendaciones </a>
             </li>
@@ -62,7 +72,7 @@
                     Nos encontramos en Plaza Santa Fe, Manuel Ávila Camacho #549 Col,
                      María Luisa, 68313 San Juan Bautista Tuxtepec, Oax.
                 </p>
-                <div>
+                <div class="map-responsive">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15170.360718823009!2d-96.1273576!3d18.0905172!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc35697238dc5b565!2sWIFISHOP!5e0!3m2!1ses!2smx!4v1584552206313!5m2!1ses!2smx" width="700" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
                 

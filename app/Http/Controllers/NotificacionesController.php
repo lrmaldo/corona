@@ -6,14 +6,27 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\notificaciones;
+use App\base_noti;
+use App\Components\FlashMessages;
+use Redirect;
 class NotificacionesController extends Controller
 {
+
+
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function index(){
+        $base_noti= base_noti::All();
+        return view('notificacion.index',compact('base_noti'));
+    }
+
+    public function enviar()
     {
         $alerts = notificaciones::all();
         if(!$alerts->count()) {
@@ -93,7 +106,9 @@ array( 'Accept: application/json','Accept-Encoding:gzip,deflate','Content-Type:a
           // $result;
         
     }
-    return $result;
+
+   
+    return $result ;
       //  return response()->json(['code' => 200, 'tokens' => $data, 'status' => 'success'], 200);
 
     }
@@ -105,7 +120,7 @@ array( 'Accept: application/json','Accept-Encoding:gzip,deflate','Content-Type:a
      */
     public function create()
     {
-        //
+        return view('notificacion/create');
     }
 
     /**
@@ -123,16 +138,66 @@ array( 'Accept: application/json','Accept-Encoding:gzip,deflate','Content-Type:a
         return response()->json(['code' => 200, 'message' => 'Token successfully stored!', 'status' => 'success'], 200);
     }
 
-    /**
-     * Display the specified resource.
+
+     /**
+     * Store a newly created resource in storage.
      *
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function store1(Request $request)
     {
-        //
+        base_noti::Create([
+            'titulo' => $request->titulo,
+            'body'=> $request->body
+        ]);
+
+        $alerts = notificaciones::all();
+        if(!$alerts->count()) {
+            return response()->json(['code' => 400, 'message' => 'No tokens found.', 'status' => 'error'], 400);
+        }
+        
+        $result = [];
+        $url = 'https://exp.host/--/api/v2/push/send';
+        foreach ($alerts as $token){
+        $data = array(
+            'to'    => $token->expo_token,
+            'title' => $request->titulo,
+            'body'  => $request->body
+        );
+      
+    
+
+        
+       
+        $headers = array(
+            'Accept: application/json',
+            'Accept-Encoding:gzip,deflate',
+            'Content-Type:application/json'
+          );
+    
+          $ch = curl_init();
+          curl_setopt($ch, CURLOPT_URL, $url);
+          curl_setopt($ch, CURLOPT_POST, true);
+          curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+          curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+          curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+          curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+          $result[] = curl_exec($ch);
+          if ($result === FALSE) {
+            die('Send Error: ' . curl_error($ch));
+          }
+          curl_close($ch);
+          // $result;
+        
     }
+    return  Redirect::to('/notificaciones')->with('messages', 'Notificación enviada.');
+    //return $result;
+
+        
+    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -165,6 +230,7 @@ array( 'Accept: application/json','Accept-Encoding:gzip,deflate','Content-Type:a
      */
     public function destroy($id)
     {
-        //
+        base_noti::destroy($id);
+		return  Redirect::to('/notificaciones');
     }
 }

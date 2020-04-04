@@ -26,7 +26,9 @@
             <li class="nav-item">
               <a class="nav-link" href="/conocenos">Quienes somos</a>
             </li>
-            
+            <li class="nav-item">
+            <a class="nav-link" href="http://www.tvbus.tv/web/">Noticias</a>
+          </li>
             <li class="nav-item">
               <a class="nav-link active " href="/recomendacion">Recomendaciones </a>
             </li>
