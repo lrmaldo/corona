@@ -75,7 +75,6 @@
   <!-- Copyright -->
   <div class="footer-copyright text-center py-2">
    
-   
     © 2020 Copyright:
     
     <a style="color: white;"href="http://sattlink.com/">Mi AppShop by Sattlink© </a>

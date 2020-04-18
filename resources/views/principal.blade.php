@@ -58,7 +58,9 @@
  
   <!-- Copyright -->
   <div class="footer-copyright text-center py-2">
-   
+
+   <div style="color:white;">Descarga nuestra App  <a class="btn btn-success" href="{{ asset('/assets/covidOax.apk') }}" role="button" download="CovidOax">Descargar APK</a> </div>
+   <br>
    
     © 2020 Copyright:
     
